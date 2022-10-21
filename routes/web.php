@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PaymentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::post('/payment_first', [App\Http\Controllers\PaymentController::class, 'payment_first_method']);
+Route::post('/payment_second', [App\Http\Controllers\PaymentController::class, 'payment_second_method']);
